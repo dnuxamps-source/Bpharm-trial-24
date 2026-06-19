@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B.Pharm Class of 2024</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Google Fonts: modern & clean -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: #f8fafc;
+      color: #0b1a33;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / navigation */
+    .navbar {
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0, 20, 30, 0.05);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(0, 60, 110, 0.08);
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: -0.5px;
+      color: #0b2b4a;
+    }
+    .logo i {
+      color: #1a6f9f;
+      margin-right: 8px;
+    }
+    .logo span {
+      color: #1a6f9f;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #1e3a5f;
+      font-size: 1rem;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+    .nav-links a:hover {
+      color: #0a4b78;
+      border-bottom-color: #1a6f9f;
+    }
+
+    /* hero section */
+    .hero {
+      padding: 60px 0 40px;
+      text-align: center;
+      background: linear-gradient(145deg, #e6f0fa 0%, #d4e6f5 100%);
+      border-radius: 0 0 40px 40px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: #0b2b4a;
+    }
+    .hero h1 i {
+      color: #1a6f9f;
+      margin-right: 12px;
+    }
+    .hero .subhead {
+      font-size: 1.3rem;
+      color: #1f4970;
+      margin: 12px 0 8px;
+      font-weight: 400;
+    }
+    .hero .tagline {
+      font-size: 1.1rem;
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+      display: inline-block;
+      padding: 10px 32px;
+      border-radius: 60px;
+      margin-top: 16px;
+      box-shadow: 0 4px 12px rgba(0, 30, 50, 0.08);
+      color: #0b2b4a;
+      font-weight: 500;
+    }
+    .hero .tagline i {
+      color: #c44536;
+      margin: 0 6px;
+    }
+
+    /* class info cards */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin: 40px 0 48px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 28px;
+      padding: 30px 28px;
+      box-shadow: 0 12px 30px -8px rgba(0, 30, 50, 0.08);
+      transition: 0.25s ease;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(2px);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px -12px rgba(10, 50, 80, 0.15);
+    }
+    .card i {
+      font-size: 2.4rem;
+      color: #1a6f9f;
+      margin-bottom: 16px;
+      display: inline-block;
+      background: #e3eef9;
+      padding: 12px;
+      border-radius: 18px;
+    }
+    .card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #0b2b4a;
+    }
+    .card p {
+      color: #2b4b6a;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+    .card ul {
+      list-style: none;
+      margin-top: 6px;
+    }
+    .card ul li {
+      padding: 6px 0;
+      border-bottom: 1px solid #e7edf5;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.98rem;
+    }
+    .card ul li i {
+      font-size: 1rem;
+      background: transparent;
+      padding: 0;
+      color: #1f6f9f;
+      width: 20px;
+    }
+    .badge {
+      background: #dceaf5;
+      color: #0b3a5a;
+      padding: 3px 14px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* memory wall / gallery */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin: 48px 0 24px;
+      color: #0b2b4a;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title i {
+      color: #1a6f9f;
+      font-size: 2rem;
+    }
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 22px;
+      margin-bottom: 50px;
+    }
+    .memory-item {
+      background: white;
+      border-radius: 24px;
+      padding: 20px 12px 16px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.04);
+      border: 1px solid #eef4fa;
+      transition: 0.2s;
+      backdrop-filter: blur(2px);
+    }
+    .memory-item:hover {
+      border-color: #b3d2e8;
+      background: #f7fbfe;
+    }
+    .memory-item .avatar {
+      font-size: 3.4rem;
+      background: #e1eff9;
+      width: 90px;
+      height: 90px;
+      line-height: 90px;
+      border-radius: 60px;
+      margin: 0 auto 12px;
+      color: #1a5f8a;
+      box-shadow: 0 8px 12px -6px rgba(0, 40, 70, 0.1);
+    }
+    .memory-item .name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #0b2b4a;
+    }
+    .memory-item .role {
+      font-size: 0.85rem;
+      color: #4a6e8a;
+      background: #ecf3fa;
+      display: inline-block;
+      padding: 2px 16px;
+      border-radius: 40px;
+      margin-top: 6px;
+    }
+    .memory-item .quote {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #1f4970;
+      margin-top: 10px;
+      padding: 0 4px;
+      border-top: 1px dashed #d3e2f0;
+      padding-top: 10px;
+    }
+
+    /* footer */
+    .footer {
+      background: #0b1f33;
+      color: #cbdae8;
+      padding: 40px 0 28px;
+      border-radius: 40px 40px 0 0;
+      margin-top: 30px;
+    }
+    .footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+    .footer h4 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #e3edf5;
+    }
+    .footer h4 i {
+      color: #79b8da;
+      margin-right: 10px;
+    }
+    .footer p {
+      max-width: 500px;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+    .footer .social {
+      display: flex;
+      gap: 28px;
+      margin: 16px 0 8px;
+    }
+    .footer .social a {
+      color: #bed7ea;
+      font-size: 1.5rem;
+      transition: 0.2s;
+    }
+    .footer .social a:hover {
+      color: white;
+      transform: scale(1.1);
+    }
+    .footer .copy {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      border-top: 1px solid #2a4a66;
+      padding-top: 18px;
+      width: 100%;
+      opacity: 0.7;
+    }
+
+    /* responsiveness */
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .grid-2col {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .navbar .container {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .memory-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 450px) {
+      .memory-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero .tagline {
+        font-size: 0.95rem;
+        padding: 8px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <i class="fas fa-mortar-pestle"></i> B.Pharm <span>2024</span>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#class">Class</a>
+      <a href="#memories">Memories</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container">
+    <h1><i class="fas fa-graduation-cap"></i> B.Pharm Class of 2024</h1>
+    <p class="subhead">🎓 Batch of excellence · 60 future pharmacists</p>
+    <div class="tagline">
+      <i class="fas fa-calendar-check"></i> 2020 – 2024 <i class="fas fa-arrow-right"></i> Proudly graduated
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- Class info: two cards -->
+  <div class="grid-2col" id="class">
+    <!-- card 1: about -->
+    <div class="card">
+      <i class="fas fa-users"></i>
+      <h3>About our class</h3>
+      <p>We are 60 passionate students who completed the Bachelor of Pharmacy (B.Pharm) in 2024. From pharmacology labs to hospital rotations, we grew together as future healthcare professionals.</p>
+      <ul>
+        <li><i class="fas fa-flag"></i> Batch strength: 60</li>
+        <li><i class="fas fa-calendar-alt"></i> Duration: 4 years (2020-2024)</li>
+        <li><i class="fas fa-university"></i> College: Faculty of Pharmacy</li>
+        <li><i class="fas fa-award"></i> 100% placement / higher education</li>
+      </ul>
+    </div>
+    <!-- card 2: achievements -->
+    <div class="card">
+      <i class="fas fa-star"></i>
+      <h3>Achievements</h3>
+      <p>Our class set new benchmarks in academics, research, and extracurriculars. We are proud of our collective journey.</p>
+      <ul>
+        <li><i class="fas fa-trophy"></i> 8 University rank holders</li>
+        <li><i class="fas fa-flask"></i> 3 research papers published</li>
+        <li><i class="fas fa-hand-holding-heart"></i> 500+ community service hours</li>
+        <li><i class="fas fa-chart-line"></i> 90% distinction rate</li>
+      </ul>
+      <div style="margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap;">
+        <span class="badge"><i class="fas fa-check-circle"></i> Top achievers</span>
+        <span class="badge"><i class="fas fa-microscope"></i> Research</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Memory wall / class representatives -->
+  <div id="memories">
+    <div class="section-title">
+      <i class="fas fa-images"></i> Memory wall · our faces
+    </div>
+    <div class="memory-grid">
+      <!-- representative cards - we add 6 members with fun details -->
+      <div class="memory-item">
+        <div class="avatar"><i class="fas fa-user-md"></i></div>
+        <div class="name">Aarav Sharma</div>
+        <div class="role">Class President</div>
+        <div class="quote">“Lead with care.”</div>
+      </div>
+      <div class="memory-item">
+        <div class="avatar"><i class="fas fa-user-graduate"></i></div>
+        <div class="name">Meera Iyer</div>
+        <div class="role">Gold Medalist</div>
+        <div class="quote">“Science is poetry.”</div>
+      </div>
+      <div class="memory-item">
+        <div class="avatar"><i class="fas fa-user-nurse"></i></div>
+        <div class="name">Rahul Patel</div>
+        <div class="role">Research Head</div>
+        <div class="quote">“Ask why, always.”</div>
+      </div>
+      <div class="memory-item">
+        <div class="avatar"><i class="fas fa-user-tie"></i></div>
+        <div class="name">Sneha Reddy</div>
+        <div class="role">Cultural Lead</div>
+        <div class="quote">“Heal with heart.”</div>
+      </div>
+      <div class="memory-item">
+        <div class="avatar"><i class="fas fa-user-astronaut"></i></div>
+        <div class="name">Vikram Singh</div>
+        <div class="role">Sports Captain</div>
+        <div class="quote">“Teamwork makes dream work.”</div>
+      </div>
+      <div class="memory-item">
+        <div class="avatar"><i class="fas fa-user-friends"></i></div>
+        <div class="name">Ananya Gupta</div>
+        <div class="role">Social Convener</div>
+        <div class="quote">“Service above self.”</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- More memories: extra quote / class spirit -->
+  <div style="background: #e2eefa; border-radius: 30px; padding: 28px 30px; margin-bottom: 30px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+    <div>
+      <i class="fas fa-quote-left" style="color: #1a6f9f; font-size: 2rem; opacity: 0.5; margin-right: 6px;"></i>
+      <span style="font-size: 1.2rem; font-weight: 400; color: #0b2b4a;">“Together we learned, together we heal.”</span>
+    </div>
+    <div>
+      <span class="badge" style="background: #0b2b4a; color: white; padding: 8px 24px;"><i class="fas fa-heart" style="color: #f28b82;"></i> Class of 2024</span>
+    </div>
+  </div>
+</div>
+
+<!-- Footer / Contact -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <h4><i class="fas fa-mortar-pestle"></i> B.Pharm 2024 · Forever batch</h4>
+    <p>This website is a tribute to our incredible journey. Stay connected, stay inspired.</p>
+    <div class="social">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+    <div class="copy">
+      &copy; 2026 B.Pharm Class of 2024 · made with <i class="fas fa-heart" style="color: #d97a6c;"></i> 
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
